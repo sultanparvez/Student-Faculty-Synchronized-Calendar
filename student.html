@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>BRAC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style> 
+            body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            }
+            
+             .header {
+        padding: 45px;
+        text-align: center;
+        background: navy;
+        color: white;
+        }
+        .header img{
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: white;
+        }
+        .header h1 {
+            position: relative;
+            top: 18px;
+            left: 10px;
+        font-size: 30px;
+        }
+     .topnav {
+         position: relative;
+  overflow: hidden;
+  background-color: blue;
+  font-size: 20px;
+  text-align: center;
+
+  
+} 
+
+.topnav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: whitesmoke;
+    display: block;
+    transition: 0.3s;
+        }
+    .topnav a:hover {
+    color: skyblue;
+}
+ 
+   
+.row { 
+    display: flex;
+    padding: 70x 25x;
+}
+.side {
+    float: left;
+    flex: 30%; 
+    background-color: white;
+   
+    color: navy;
+    font-size: 20px;
+}
+.main { 
+    float: right;
+    flex: 70%; 
+    background-color: #cce6ff;
+
+    font-size: 30px
+        
+}
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+}
+@media screen and (max-width: 700px) {
+    .row { 
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color: black;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.month {
+    width: 100%;
+    background: skyblue;
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+.container {
+    padding: 40px;
+}
+span.psw{
+    float: right;
+    padding-top: 25px;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; 
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+ 
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+
+
+
+.footer {
+    padding: 5px;
+    text-align: center;
+    background: #ddd; 
+}
+        </style>
+    </head>
+    
+    
+    <body>
+    
+
+        <div class="header">
+         <img src="http://www.bracu.ac.bd/sites/default/files/resources/media/bracu_logo.png" alt="logo"/>
+        <h1> BRAC UNIVERSITY CALENDAR AND FORUM </h1>
+                </div>
+       
+
+         <div class="topnav">
+             <a href="forum.php" >Forum</a>
+    
+        </div> 
+          
+
+
+
+  <div class="row">
+      <div class="side"> Class timings <br> <br> <br>
+       <table border="2" cellspacing="3" align="center" >
+<tr>
+ <td align="center">
+ <td>8-9:20
+ <td>9:30-10:50
+ <td>11-12:20
+ <td>12:30-1:50
+ <td>2:00-3:20
+ <td>3:30-4:50
+ <td>5:00-6:20
+</tr>
+
+<tr>
+ <td align="center">Sunday
+ <td align="center">CSE230<BR>
+ <td align="center">MAT215<br>
+ <td align="center">
+     <td align="center">
+         <td align="center">
+             <td align="center">
+                 <td align="center">
+</tr>
+<tr>
+ <td align="center">Monday
+ <td align="center">
+     <td align="center">
+     <td align="center">CSE221<BR>
+ <td align="center">PSY101<br>
+
+         <td align="center">
+             <td align="center">
+                 <td align="center">
+</tr>
+</tr>
+<tr>
+ <td align="center">Tuseday
+ <td align="center">CSE230<BR>
+ <td align="center">MAT215<br>
+ <td align="center">
+     <td align="center">
+         <td align="center">
+             <td align="center">
+                 <td align="center">
+</tr>
+<tr>
+ <td align="center">Wednesday
+ <td align="center">
+     <td align="center">
+     <td align="center">CSE221<BR>
+ <td align="center">PSY101<br>
+
+         <td align="center">CSE230 Lab
+             <td align="center">
+                 <td align="center">
+</tr>
+<tr>
+  <td align="center">Thursday
+ <td align="center">
+     <td align="center">
+     <td align="center">CSE221 Lab<BR>
+ <td align="center">
+
+         <td align="center">
+             <td align="center">
+                 <td align="center">
+</tr>
+<tr>
+ <td align="center">Saturday
+          <td align="center">
+             <td align="center">
+                 <td align="center">
+                              <td align="center">
+             <td align="center">
+                 <td align="center">
+</tr>
+  
+       </table>
+      </div>
+     
+  
+      <div class="main">Calendar<br> <br> <br>
+         
+     <div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      October<br>
+      <span style="font-size:18px">2018</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days">  
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
+</ul>
+
+</div>
+    </div>
+ 
+
+        
+   
+    </body>
+</html>
